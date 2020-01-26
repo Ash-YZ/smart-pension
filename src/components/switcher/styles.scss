@@ -1,7 +1,9 @@
 .switch-label {
-  text-transform: capitalize;
+  position: relative;
+  top: 5px;
   margin: 0 20px;
   font-size: 25px;
+  text-transform: capitalize;
 }
 
 .switch {

@@ -8,9 +8,14 @@ exports[`Switcher should render game switcher correctly  1`] = `
     Game Mode
   </h3>
   <span
-    className="switch-label"
+    className="switch-label d-none d-md-inline"
   >
     people
+  </span>
+  <span
+    className="switch-label d-md-none"
+  >
+    P
   </span>
   <label
     className="switch"
@@ -25,9 +30,14 @@ exports[`Switcher should render game switcher correctly  1`] = `
     />
   </label>
   <span
-    className="switch-label"
+    className="switch-label d-none d-md-inline"
   >
     starship
+  </span>
+  <span
+    className="switch-label d-md-none"
+  >
+    S
   </span>
 </div>
 `;

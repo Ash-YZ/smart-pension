@@ -10,10 +10,10 @@ const Score = props => {
         {props.score.map((scr, idx) =>
           <div key={`score-${idx}`} className='row justify-content-center'>
             <>
-              <div className='col-6 text-left'>
+              <div className='col-md-6 col-10 text-left'>
                 <h2>Player {idx + 1}:</h2>
               </div>
-              <div className='col-6 text-right'>
+              <div className='col-md-5 col-2 text-right'>
                 <h2>{scr}</h2>
               </div>
             </>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Card from './components/card/Card'
 import Control from './components/control/Control'
 import Loader from './components/loader/Loader'
+import Title from './components/title/Title'
 import { cardReducer } from './reducers/card-reducer'
 import { getAllPeople, getPerson, getAllStarships, getStarship } from './services/card-service'
 import './styles.scss'
@@ -19,81 +20,52 @@ function App() {
   const [data, dispatch] = React.useReducer(cardReducer, initialState)
   const [loading, setLoading] = useState(false)
 
-  const getCardsToPlay = () => {
-    setLoading(true)
-    let cardSearchArray = [...data.cards]
-      .map(() => Math.floor(Math.random() * data.totalCards) + 1)
-
-    const cardPromises = (data.mode === 'people') ?
-      cardSearchArray.map(cardId => getPerson(cardId)) :
-      cardSearchArray.map(cardId => getStarship(cardId))
-
-    Promise.all(cardPromises)
-      .then(resps => {
-        const jsonResps = resps.map(resp => resp.json());
-        Promise.all(jsonResps).then(cards => {
-          // Filter duff cards
-          if (cards.filter(card => card.name && card.mass !== 'unknown').length === data.cards.length) {
-            dispatch({ type: 'SET_CARDS', cards })
-            setLoading(false)
-          }
-          else
-            getCardsToPlay()
-        })
-      })
-
-  }
-
   const switchGameMode = () => {
     dispatch({ type: 'SWITCH_MODE' })
   }
 
-  const getTotalPeopleCards = () => {
-    getAllPeople()
-      .then(res => res.json())
-      .then(res => {
-        dispatch({ type: 'SET_TOTAL_CARDS', totalCards: res.count })
-      })
+  const getTotalCards = async (mode) => {
+    setLoading(true)
+    const resp = mode === 'people' ?
+      await (await getAllPeople()).json() :
+      await (await getAllStarships()).json()
+    dispatch({ type: 'SET_TOTAL_CARDS', totalCards: resp.count })
+    setLoading(false)
   }
 
-  const getStarshipCards = () => {
-    getAllStarships()
-      .then(res => res.json())
-      .then(res => {
-        dispatch({ type: 'SET_TOTAL_CARDS', totalCards: res.count })
-      })
+  const getCardsToPlay = async () => {
+    setLoading(true)
+    let cardSearchArray = [...data.cards].map(() => Math.floor(Math.random() * data.totalCards) + 1)
+    const cardPromises = await data.mode === 'people' ? cardSearchArray.map(cardId => getPerson(cardId)) : cardSearchArray.map(cardId => getStarship(cardId))
+    const resps = await Promise.all(cardPromises)
+    const jsonResps = resps.map(resp => resp.json())
+    const cards = await Promise.all(jsonResps)
+    // Only use valid cards - must have a name and a mass
+    if (cards.filter(card => !!card.name && card.mass !== 'unknown').length === data.cards.length)
+      dispatch({ type: 'SET_CARDS', cards })
+    else
+      getCardsToPlay()
   }
 
   useEffect(() => {
+    setLoading(false)
     dispatch({ type: 'GET_WINNER' })
   }, [data.cards])
 
   useEffect(() => {
-    data.mode === 'people' ?
-      getTotalPeopleCards() :
-      getStarshipCards()
+    getTotalCards(data.mode)
   }, [data.mode])
 
   return (
     <div className='app'>
       {loading && <Loader />}
       <div className={loading ? 'dim' : ''}>
+        <Title title='Star Wars Game' isMain />
+        <Title title='Game Cards' />
         <div className='container'>
-          <div className='row'>
-            <div className='col-12'>
-              <h1>Star Wars Game</h1>
-            </div>
-          </div>
-        </div>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-12'>
-              <h1 className='py-1'>Game Cards</h1>
-            </div>
-          </div>
           <div className='row justify-content-center'>
             {[...data.cards].map((card, idx) =>
-              <div className='col-3' key={idx}>
+              <div className='col-lg-3 col-md-4 col-sm-6' key={idx}>
                 <Card card={card}
                   gameMode={data.mode}
                   isWinner={data.winner === idx}
@@ -101,21 +73,15 @@ function App() {
               </div>)}
           </div>
         </div>
-        <div className='container'>
-          <div className='row justify-content-center'>
-            <div className='col-5 col-center'>
-              <Control
-                score={data.score}
-                newGameHandler={getCardsToPlay}
-                switchModeHandler={switchGameMode}
-                submitButtonLabel='New Cards' />
-            </div>
-          </div>
-        </div>
-
+        <Control
+          score={data.score}
+          newGameHandler={getCardsToPlay}
+          switchModeHandler={switchGameMode}
+          submitButtonLabel='New Cards' />
       </div>
     </div>
   )
 }
 
 export default App;
+

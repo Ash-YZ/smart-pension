@@ -6,14 +6,20 @@ import Switcher from '../switcher/Switcher'
 
 const Control = props => {
   return (
-    <div className='control'>
-      <Score score={props.score} />
-      <Switcher gameMode='people'
-        switchModeHandler={props.switchModeHandler}
-        gameModes={['people', 'starship']} />
-      <button type="button"
-        className="ctrl-button btn btn-success w-100"
-        onClick={props.newGameHandler}>{props.submitButtonLabel}</button>
+    <div className='container' >
+      <div className='row justify-content-center'>
+        <div className='col-lg-6 col-md-8 col-sm-12 col-center'>
+          <div className='control'>
+            <Score score={props.score} />
+            <Switcher gameMode='people'
+              switchModeHandler={props.switchModeHandler}
+              gameModes={['people', 'starship']} />
+            <button type="button"
+              className="ctrl-button btn btn-success w-100"
+              onClick={props.newGameHandler}>{props.submitButtonLabel}</button>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

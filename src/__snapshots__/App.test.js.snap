@@ -7,42 +7,21 @@ exports[`App should render control correctly  1`] = `
   <div
     className=""
   >
+    <Title
+      isMain={true}
+      title="Star Wars Game"
+    />
+    <Title
+      title="Game Cards"
+    />
     <div
       className="container"
     >
-      <div
-        className="row"
-      >
-        <div
-          className="col-12"
-        >
-          <h1>
-            Star Wars Game
-          </h1>
-        </div>
-      </div>
-    </div>
-    <div
-      className="container"
-    >
-      <div
-        className="row"
-      >
-        <div
-          className="col-12"
-        >
-          <h1
-            className="py-1"
-          >
-            Game Cards
-          </h1>
-        </div>
-      </div>
       <div
         className="row justify-content-center"
       >
         <div
-          className="col-3"
+          className="col-lg-3 col-md-4 col-sm-6"
           key="0"
         >
           <Card
@@ -52,7 +31,7 @@ exports[`App should render control correctly  1`] = `
           />
         </div>
         <div
-          className="col-3"
+          className="col-lg-3 col-md-4 col-sm-6"
           key="1"
         >
           <Card
@@ -63,29 +42,17 @@ exports[`App should render control correctly  1`] = `
         </div>
       </div>
     </div>
-    <div
-      className="container"
-    >
-      <div
-        className="row justify-content-center"
-      >
-        <div
-          className="col-5 col-center"
-        >
-          <Control
-            newGameHandler={[Function]}
-            score={
-              Array [
-                0,
-                0,
-              ]
-            }
-            submitButtonLabel="New Cards"
-            switchModeHandler={[Function]}
-          />
-        </div>
-      </div>
-    </div>
+    <Control
+      newGameHandler={[Function]}
+      score={
+        Array [
+          0,
+          0,
+        ]
+      }
+      submitButtonLabel="New Cards"
+      switchModeHandler={[Function]}
+    />
   </div>
 </div>
 `;

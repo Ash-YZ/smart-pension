@@ -15,7 +15,7 @@ exports[`Score should render control correctly  1`] = `
       key="score-0"
     >
       <div
-        className="col-6 text-left"
+        className="col-md-6 col-10 text-left"
       >
         <h2>
           Player 
@@ -24,7 +24,7 @@ exports[`Score should render control correctly  1`] = `
         </h2>
       </div>
       <div
-        className="col-6 text-right"
+        className="col-md-5 col-2 text-right"
       >
         <h2>
           1
@@ -36,7 +36,7 @@ exports[`Score should render control correctly  1`] = `
       key="score-1"
     >
       <div
-        className="col-6 text-left"
+        className="col-md-6 col-10 text-left"
       >
         <h2>
           Player 
@@ -45,7 +45,7 @@ exports[`Score should render control correctly  1`] = `
         </h2>
       </div>
       <div
-        className="col-6 text-right"
+        className="col-md-5 col-2 text-right"
       >
         <h2>
           2
@@ -57,7 +57,7 @@ exports[`Score should render control correctly  1`] = `
       key="score-2"
     >
       <div
-        className="col-6 text-left"
+        className="col-md-6 col-10 text-left"
       >
         <h2>
           Player 
@@ -66,7 +66,7 @@ exports[`Score should render control correctly  1`] = `
         </h2>
       </div>
       <div
-        className="col-6 text-right"
+        className="col-md-5 col-2 text-right"
       >
         <h2>
           3
