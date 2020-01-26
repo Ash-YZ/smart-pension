@@ -5,6 +5,10 @@
   min-width: 100%;
   min-height: 130px;
 
+  .badge {
+    font-size: 20px;
+  }
+
   &.winner {
     background-color: green;
   }

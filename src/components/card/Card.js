@@ -8,8 +8,16 @@ const Card = props => {
       <div className="card-body">
         <h5 className="card-title">{props.card ? props.card.name : '-----'}</h5>
         {props.gameMode === 'people' ?
-          <p className="card-text">Mass: {props.card ? props.card.mass : '-----'}</p> :
-          <p className="card-text">Crew: {props.card ? props.card.crew : '-----'}</p>}
+          <p className="card-text">
+            <span className={`${props.isWinner ? 'badge badge-light' : ''}`}>
+              Mass: {props.card ? props.card.mass : '-----'}
+            </span>
+          </p> :
+          <p className="card-text">
+            <span className={`${props.isWinner ? 'badge badge-light' : ''}`}>
+              Crew: {props.card ? props.card.crew : '-----'}
+            </span>
+          </p>}
       </div>
     </div>
   )
