@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Control should render control correctly  1`] = `
+<div
+  className="control"
+>
+  <Score
+    score={
+      Array [
+        0,
+        1,
+      ]
+    }
+  />
+  <Switcher
+    gameMode="people"
+    gameModes={
+      Array [
+        "people",
+        "starship",
+      ]
+    }
+    switchModeHandler={[Function]}
+  />
+  <button
+    className="ctrl-button btn btn-success w-100"
+    onClick={[MockFunction]}
+    type="button"
+  >
+    Submit
+  </button>
+</div>
+`;

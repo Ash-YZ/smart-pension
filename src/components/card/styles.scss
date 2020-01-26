@@ -1,0 +1,15 @@
+.card{
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  min-width: 100%;
+  min-height: 130px;
+
+  &.winner {
+    background-color: green;
+  }
+
+  &.draw {
+    background-color: grey;
+  }
+}

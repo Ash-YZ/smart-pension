@@ -1,12 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme'
-import App from './App';
+import Score from './Score'
 
-const component = shallow(<App />)
+const testProps = {
+  score: [1, 2, 3]
+}
 
-describe('App', () => {
+describe('Score', () => {
   it('should render control correctly ', () => {
+    const component = shallow(<Score {...testProps} />)
     expect(component).toMatchSnapshot()
   })
 })
-

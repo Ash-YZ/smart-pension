@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switcher should render game switcher correctly  1`] = `
+<div
+  className="my-3"
+>
+  <h3>
+    Game Mode
+  </h3>
+  <span
+    className="switch-label"
+  >
+    people
+  </span>
+  <label
+    className="switch"
+  >
+    <input
+      className="switch-input"
+      onChange={[MockFunction]}
+      type="checkbox"
+    />
+    <span
+      className="slider"
+    />
+  </label>
+  <span
+    className="switch-label"
+  >
+    starship
+  </span>
+</div>
+`;

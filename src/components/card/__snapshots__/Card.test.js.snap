@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should render "people" mode correctly  1`] = `
+<div
+  className="card  "
+>
+  <div
+    className="card-body"
+  >
+    <h5
+      className="card-title"
+    >
+      Person 1
+    </h5>
+    <p
+      className="card-text"
+    >
+      Mass: 
+      100
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Card should render "starship" mode correctly  1`] = `
+<div
+  className="card  "
+>
+  <div
+    className="card-body"
+  >
+    <h5
+      className="card-title"
+    >
+      Person 1
+    </h5>
+    <p
+      className="card-text"
+    >
+      Crew: 
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Card should render empty card correctly  1`] = `
+<div
+  className="card  "
+>
+  <div
+    className="card-body"
+  >
+    <h5
+      className="card-title"
+    >
+      -----
+    </h5>
+    <p
+      className="card-text"
+    >
+      Mass: 
+      -----
+    </p>
+  </div>
+</div>
+`;

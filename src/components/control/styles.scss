@@ -1,0 +1,19 @@
+.control {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 40px 0;
+}
+
+.ctrl-button {
+  padding: 10px;
+  font-size: 20px;
+}
+
+button.btn-success {
+  background-color: green;
+  
+  &:focus {
+    background-color: green;
+  }
+}
