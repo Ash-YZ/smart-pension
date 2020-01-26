@@ -60,12 +60,12 @@ function App() {
     <div className='app'>
       {loading && <Loader />}
       <div className={loading ? 'dim' : ''}>
-        <Title title='Star Wars Game' isMain />
+        <Title title='STAR WARS' isMain />
         <Title title='Game Cards' />
         <div className='container'>
           <div className='row justify-content-center'>
             {[...data.cards].map((card, idx) =>
-              <div className='col-lg-3 col-md-4 col-sm-6' key={idx}>
+              <div className='col-lg-3 col-md-4 col-6' key={idx}>
                 <Card card={card}
                   gameMode={data.mode}
                   isWinner={data.winner === idx}
