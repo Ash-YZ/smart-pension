@@ -9,7 +9,7 @@ exports[`App should render control correctly  1`] = `
   >
     <Title
       isMain={true}
-      title="Star Wars Game"
+      title="STAR WARS"
     />
     <Title
       title="Game Cards"
@@ -21,7 +21,7 @@ exports[`App should render control correctly  1`] = `
         className="row justify-content-center"
       >
         <div
-          className="col-lg-3 col-md-4 col-sm-6"
+          className="col-lg-3 col-md-4 col-6"
           key="0"
         >
           <Card
@@ -31,7 +31,7 @@ exports[`App should render control correctly  1`] = `
           />
         </div>
         <div
-          className="col-lg-3 col-md-4 col-sm-6"
+          className="col-lg-3 col-md-4 col-6"
           key="1"
         >
           <Card
