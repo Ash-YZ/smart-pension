@@ -15,8 +15,12 @@ exports[`Card should render "people" mode correctly  1`] = `
     <p
       className="card-text"
     >
-      Mass: 
-      100
+      <span
+        className=""
+      >
+        Mass: 
+        100
+      </span>
     </p>
   </div>
 </div>
@@ -37,7 +41,11 @@ exports[`Card should render "starship" mode correctly  1`] = `
     <p
       className="card-text"
     >
-      Crew: 
+      <span
+        className=""
+      >
+        Crew: 
+      </span>
     </p>
   </div>
 </div>
@@ -58,8 +66,12 @@ exports[`Card should render empty card correctly  1`] = `
     <p
       className="card-text"
     >
-      Mass: 
-      -----
+      <span
+        className=""
+      >
+        Mass: 
+        -----
+      </span>
     </p>
   </div>
 </div>
