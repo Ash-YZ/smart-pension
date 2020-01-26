@@ -36,7 +36,9 @@ function App() {
   const getCardsToPlay = async () => {
     setLoading(true)
     let cardSearchArray = [...data.cards].map(() => Math.floor(Math.random() * data.totalCards) + 1)
-    const cardPromises = await data.mode === 'people' ? cardSearchArray.map(cardId => getPerson(cardId)) : cardSearchArray.map(cardId => getStarship(cardId))
+    const cardPromises = await data.mode === 'people' ?
+      cardSearchArray.map(cardId => getPerson(cardId)) :
+      cardSearchArray.map(cardId => getStarship(cardId))
     const resps = await Promise.all(cardPromises)
     const jsonResps = resps.map(resp => resp.json())
     const cards = await Promise.all(jsonResps)

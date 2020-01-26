@@ -7,7 +7,7 @@ const testProps = {
 }
 
 describe('Score', () => {
-  it('should render control correctly ', () => {
+  it('should render score correctly ', () => {
     const component = shallow(<Score {...testProps} />)
     expect(component).toMatchSnapshot()
   })

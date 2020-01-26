@@ -1,7 +1,7 @@
 import { cardReducer } from './card-reducer'
 
 describe('Card reducer', () => {
-  it('SET_TOTAL_CARDS should set total numner of cards', () => {
+  it('SET_TOTAL_CARDS should set total number of cards', () => {
     const state = { totalCards: 0 }
     const totalCards = 10
 

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Score should render control correctly  1`] = `
+exports[`Score should render score correctly  1`] = `
 <div
   className="score"
 >
